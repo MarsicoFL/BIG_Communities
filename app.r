@@ -1,6 +1,6 @@
 ################################################################################
 #  BIG Communities Explorer – v2 (fixed header + valid skin)
-#  Author: (your name)          Last update: 2025-08-04
+#  Author: FM          Last update: 2025-08-04
 ################################################################################
 suppressPackageStartupMessages({
   library(shiny);  library(shinydashboard)
