@@ -13,6 +13,7 @@ Project home: <https://uthsc.edu/cbmi/big/>
   - A **shiny dashboard** (`app.r`) to interactively explore genetic, environmental and health patterns at sub‑community resolution.
 
 ## Mapping BIG
+Here we can explore the spatial correlation between the relatedness based communities (can be interpreted as big families composed by distant relatives). In the example we see pollution (PM 2.5) and a specific community C2 (mostly African ancestry). 
 
 <img width="1284" height="1174" alt="map" src="https://github.com/user-attachments/assets/2d999179-84a5-429a-bd7e-7f3fe4a8a1b7" />
 
