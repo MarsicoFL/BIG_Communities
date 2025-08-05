@@ -10,22 +10,20 @@ Project home: <https://uthsc.edu/cbmi/big/>
 - **aggregated data & scripts** to reproduce the analysis at biobank scale. Identity‑by‑descent (IBD) clustering.  
   - four continent‑scale genetic communities, and  
   - seventeen sub‑communities that share both genetic architecture and distinct environmental exposures.  
-  - A **Streamlit dashboard** (`subcommunity_explorer_app.py`) to interactively explore genetic, environmental and health patterns at sub‑community resolution.
+  - A **shiny dashboard** (`app.r`) to interactively explore genetic, environmental and health patterns at sub‑community resolution.
 
-## Quick start
-```bash
-## Quick start
-# activate your conda environment (or create one)
-conda activate myenv
+## Mapping BIG
 
-# install dependencies
-pip install streamlit pandas numpy
+<img width="1284" height="1174" alt="map" src="https://github.com/user-attachments/assets/2d999179-84a5-429a-bd7e-7f3fe4a8a1b7" />
 
-# run the dashboard
-streamlit run subcommunity_explorer_app.py
-```
+## Exploring health conditions across communities
 
-<img width="1576" height="935" alt="BIG_dashboard" src="https://github.com/user-attachments/assets/8959c0f8-7a93-49a0-8f59-ddf362dab50a" />
+<img width="1269" height="864" alt="phenotypes" src="https://github.com/user-attachments/assets/b22f022d-29b9-4220-9174-c09411203bdc" />
+
+## Communities, environment and health conditions
+
+<img width="1273" height="630" alt="environment" src="https://github.com/user-attachments/assets/7e64f840-7b6b-4658-ae93-f082314eb761" />
+
 
 Note: Final dashboard will be deployed in a web, at this stage the data are for illustrative purposes
 
