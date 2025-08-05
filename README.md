@@ -18,14 +18,17 @@ Here we can explore the spatial correlation between the relatedness based commun
 <img width="1284" height="1174" alt="map" src="https://github.com/user-attachments/assets/2d999179-84a5-429a-bd7e-7f3fe4a8a1b7" />
 
 ## Exploring health conditions across communities
+Here we can see the health conditions and the prevalence within different communities in order to compare them.
 
 <img width="1269" height="864" alt="phenotypes" src="https://github.com/user-attachments/assets/b22f022d-29b9-4220-9174-c09411203bdc" />
 
 ## Communities, environment and health conditions
 
+Here we can explore genetically related individuals (communities) with shared enviromental and health conditions, aiming to inform decision making in public health.
+
 <img width="1273" height="630" alt="environment" src="https://github.com/user-attachments/assets/7e64f840-7b6b-4658-ae93-f082314eb761" />
 
 
-Note: Final dashboard will be deployed in a web, at this stage the data are for illustrative purposes
+Note: The final dashboard will be deployed in a web, at this stage the data are for illustrative purposes
 
 fmarsico@uthsc.edu
