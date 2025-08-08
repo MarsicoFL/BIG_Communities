@@ -3,8 +3,15 @@
 Data and code for the manuscript **“Identity‑by‑descent captures shared environmental factors at biobank scale.”**  
 Pre‑print: <https://doi.org/10.1101/2025.05.03.652048>
 
+To access the app visit the following link: <https://francomarsico.shinyapps.io/BIG_Communities/>
+
+<img width="1909" height="957" alt="fig1" src="https://github.com/user-attachments/assets/315b5737-8dfd-40a8-a591-d10583791a2e" />
+
+
 This project is part of the **Biorepository, Informatics & Genomics (BIG) initiative at the University of Tennessee Health Science Center**.  
 Project home: <https://uthsc.edu/cbmi/big/>
+
+
 
 ## What’s in this repository?
 - **aggregated data & scripts** to reproduce the analysis at biobank scale. Identity‑by‑descent (IBD) clustering.  
@@ -14,19 +21,19 @@ Project home: <https://uthsc.edu/cbmi/big/>
 
 ## Mapping BIG
 Here we can explore the spatial correlation between the relatedness based communities (can be interpreted as big families composed by distant relatives). In the example we see pollution (PM 2.5) and a specific community C2 (mostly African ancestry). 
+<img width="1909" height="957" alt="fig2" src="https://github.com/user-attachments/assets/65221633-06b4-4abf-8fc5-b6222b07db6d" />
 
-<img width="1284" height="1174" alt="map" src="https://github.com/user-attachments/assets/2d999179-84a5-429a-bd7e-7f3fe4a8a1b7" />
 
 ## Exploring health conditions across communities
 Here we can see the health conditions and the prevalence within different communities in order to compare them.
+<img width="1909" height="957" alt="fig3" src="https://github.com/user-attachments/assets/6642f5c3-aadd-4cf4-a535-0f6c235f1cf5" />
 
-<img width="1269" height="864" alt="phenotypes" src="https://github.com/user-attachments/assets/b22f022d-29b9-4220-9174-c09411203bdc" />
 
 ## Communities, environment and health conditions
 
 Here we can explore genetically related individuals (communities) with shared enviromental and health conditions, aiming to inform decision making in public health.
 
-<img width="1273" height="630" alt="environment" src="https://github.com/user-attachments/assets/7e64f840-7b6b-4658-ae93-f082314eb761" />
+<img width="1909" height="957" alt="fig4" src="https://github.com/user-attachments/assets/7a1109d6-5383-4d60-8497-a7af2b1e7ac2" />
 
 
 Note: The final dashboard will be deployed in a web, at this stage the data are for illustrative purposes
