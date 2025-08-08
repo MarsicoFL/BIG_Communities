@@ -428,4 +428,5 @@ server <- function(input, output, session){
       datatable(options = list(pageLength = 20), rownames = FALSE)
   })
 }
-shinyApp(ui, server, options = list(launch.browser = TRUE))
+#shinyApp(ui, server, options = list(launch.browser = TRUE))
+shinyApp(ui, server)
