@@ -99,8 +99,8 @@ body <- dashboardBody(
           HTML(
             "<h4>What is BIG? 🔬</h4>
              <p>The <strong>Biorepository &amp; Integrative Genomics (BIG) Initiative</strong>
-                links <b>&gt;42,000</b> participants to genome data, ZIP-code environment,
-                and longitudinal EHRs, creating one of the largest pediatric genomic resources.</p>
+                links <b>&gt;42,000</b> participants to longitudinal EHRs, genome data, environmental measures by ZIP-code,
+                , creating one of the largest pediatric genomic resources.</p>
              <h4>How are communities defined? 🧬</h4>
              <p>Identity-by-descent (IBD) networks cluster individuals by long shared haplotypes
                 instead of preset continental labels. Communities act like very large families of distant
@@ -110,9 +110,9 @@ body <- dashboardBody(
                <li>17 sub-communities (<code>C1_1…C4_4</code>) capturing 99.7% of sequences.</li>
                <li>Integration of ancestry <em>and</em> neighborhood context.</li>
              </ul>
-             <h4>Why does it matter? 🌍</h4>
+             <h4>Why does it matter? </h4>
              <ul>
-               <li>Communities reveal uneven exposures (PM<sub>2.5</sub>, ETS, SVI).</li>
+               <li>Communities reveal shared environmental exposures linked to health conditions (PM<sub>2.5</sub>, SVI).</li>
                <li>Inform public health decision making.</li>
                <li>Enable identification of shared environments and health conditions across related groups.</li>
              </ul>
@@ -195,15 +195,15 @@ body <- dashboardBody(
       tabName = "pheno",
       fluidRow(
         box(width = 3,
-            selectizeInput("conds", "Condition(s) (max 3)",
+            selectizeInput("conds", "Condition(s) (max 4)",
                            choices = conds_all, selected = conds_all[1],
-                           multiple = TRUE, options = list(maxItems = 3)),
+                           multiple = TRUE, options = list(maxItems = 4)),
             radioButtons("pheno_level", "Aggregate by",
                          choices = c("Sub-community" = "sub", "Community (C1–C4)" = "com"),
                          selected = "sub")
         ),
         box(width = 9, 
-            title = tagList(icon("chart-bar"), "Health condition prevalence"),
+            title = tagList(icon("chart-bar"), "Health condition prevalence (proportion of individuals who reported the condition at least in one visit)"),
             status = "primary", solidHeader = TRUE,
             plotOutput("pheno_plot", height = 480),
             div(class="small-note", "Bars show prevalence (%); whiskers show uncertainty range reported in the dataset.")
@@ -230,9 +230,9 @@ body <- dashboardBody(
                         selected = paste0("C", 1:4),
                         multiple = TRUE,
                         options  = list(`actions-box` = TRUE, `style` = "btn-primary")),
-            selectInput("x_var", "Environmental variable (mean %)",
+            selectInput("x_var", "Environmental variable (%)",
                         choices = setNames(env_vars_mean, pretty_v(env_vars_mean))),
-            selectInput("y_cond", "Phenotype (outcome %)",
+            selectInput("y_cond", "Health condition (%)",
                         choices = conds_all, selected = "Respiratory")
         ),
         box(width = 9, 
