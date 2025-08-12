@@ -3,13 +3,15 @@
 Data and code for the manuscript **“Identity‑by‑descent captures shared environmental factors at biobank scale.”**  
 Pre‑print: <https://doi.org/10.1101/2025.05.03.652048>
 
-To access the app visit the following link: <https://francomarsico.shinyapps.io/BIG_Communities/>
+This project is part of the **Biorepository, Informatics & Genomics (BIG) initiative at the University of Tennessee Health Science Center**.  
+Project home: <https://uthsc.edu/cbmi/big/>
+
+
+To access the R shiny app visit the following link: <https://francomarsico.shinyapps.io/BIG_Communities/>
 
 <img width="1909" height="957" alt="fig1" src="https://github.com/user-attachments/assets/315b5737-8dfd-40a8-a591-d10583791a2e" />
 
 
-This project is part of the **Biorepository, Informatics & Genomics (BIG) initiative at the University of Tennessee Health Science Center**.  
-Project home: <https://uthsc.edu/cbmi/big/>
 
 
 
