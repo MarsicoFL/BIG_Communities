@@ -6,6 +6,12 @@ Pre‑print: <https://doi.org/10.1101/2025.05.03.652048>
 This project is part of the **Biorepository, Informatics & Genomics (BIG) initiative at the University of Tennessee Health Science Center**.  
 Project home: <https://uthsc.edu/cbmi/big/>
 
+## What’s in this repository?
+- **aggregated data & scripts** to reproduce the analysis at biobank scale. Identity‑by‑descent (IBD) clustering.  
+  - four continent‑scale genetic communities, and  
+  - seventeen sub‑communities that share both genetic architecture and distinct environmental exposures.  
+  - A **shiny dashboard** (`app.r`) to interactively explore genetic, environmental and health patterns at sub‑community resolution.
+
 
 To access the R shiny app visit the following link: <https://francomarsico.shinyapps.io/BIG_Communities/>
 
@@ -15,11 +21,6 @@ To access the R shiny app visit the following link: <https://francomarsico.shiny
 
 
 
-## What’s in this repository?
-- **aggregated data & scripts** to reproduce the analysis at biobank scale. Identity‑by‑descent (IBD) clustering.  
-  - four continent‑scale genetic communities, and  
-  - seventeen sub‑communities that share both genetic architecture and distinct environmental exposures.  
-  - A **shiny dashboard** (`app.r`) to interactively explore genetic, environmental and health patterns at sub‑community resolution.
 
 ## Mapping BIG
 Here we can explore the spatial correlation between the relatedness based communities (can be interpreted as big families composed by distant relatives). In the example we see pollution (PM 2.5) and a specific community C2 (mostly African ancestry). 
