@@ -6,7 +6,7 @@ suppressPackageStartupMessages({
   library(sf);              library(geojsonio)
   library(dplyr);           library(tidyr);         library(readr)
   library(DT);              library(ggplot2);       library(viridisLite)
-  library(plotly);          library(tibble);        library(forcats); library(stringr)
+  library(plotly);          library(tibble);        library(forcats); library(stringr); library(RColorBrewer) 
 })
 
 read_data <- function(path_data){
@@ -290,7 +290,7 @@ server <- function(input, output, session){
   })
   
   base_sf <- inner_join(d$geo, select(d$zip, -ZIP_CODE), by = "ZCTA5CE10")
-  make_map <- function(map_id, var_react, op_react){
+  make_map <- function(map_id, var_react, op_react, pal_name){
     observe({
       var <- var_react()
       if (is.null(var) || var == ""){
@@ -298,17 +298,20 @@ server <- function(input, output, session){
         return()
       }
       sf_m <- mutate(base_sf, sel = .data[[var]])
-      pal  <- colorNumeric(viridis(256), domain = sf_m$sel, na.color = "#f0f0f0")
+      pal_fun <- colorNumeric(RColorBrewer::brewer.pal(9, pal_name),
+                              domain = sf_m$sel, na.color = "#f0f0f0")
+      
       leafletProxy(map_id, data = sf_m) |>
         clearShapes() |>
         clearControls() |>
         addPolygons(
-          fillColor = ~pal(sel), fillOpacity = op_react(),
-          color     = "grey20", weight = .5, opacity = 1,
-          label     = ~lapply(sprintf("ZIP: %s<br/>%s: %.3f", ZCTA5CE10, pretty_v(var), sel), htmltools::HTML),
+          fillColor = ~pal_fun(sel), fillOpacity = op_react(),
+          color = "grey20", weight = .5, opacity = 1,
+          label = ~lapply(sprintf("ZIP: %s<br/>%s: %.3f", ZCTA5CE10, pretty_v(var), sel), htmltools::HTML),
           highlightOptions = highlightOptions(weight = 1.5, bringToFront = TRUE)
         ) |>
-        addLegend("bottomright", pal = pal, values = sf_m$sel, title = pretty_v(var), opacity = .7)
+        addLegend("bottomright", pal = pal_fun, values = sf_m$sel,
+                  title = pretty_v(var), opacity = .7)
     })
   }
   output$mapA <- renderLeaflet({
@@ -319,8 +322,8 @@ server <- function(input, output, session){
     leaflet() |> addProviderTiles("CartoDB.Positron") |> addFullscreenControl() |> addResetMapButton() |>
       setView(lng = -89.97, lat = 35.08, zoom = 7)
   })
-  make_map("mapA", reactive(input$mapA_var), reactive(input$mapA_op))
-  make_map("mapB", reactive(input$mapB_var), reactive(input$mapB_op))
+  make_map("mapA", reactive(input$mapA_var), reactive(input$mapA_op), "Reds")
+  make_map("mapB", reactive(input$mapB_var), reactive(input$mapB_op), "Blues")
   output$map_scatter <- renderPlot({
     if (input$mapA_var == "" || input$mapB_var == "") return()
     v1  <- d$zip[[input$mapA_var]]
