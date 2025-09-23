@@ -175,7 +175,7 @@ body <- dashboardBody(
                         choices  = c("– select variable –" = "", setNames(vars_zip, pretty_v(vars_zip))), selected = ""),
             sliderInput("mapA_op", "Opacity", .2, 1, .7, .05),
             leafletOutput("mapA", height = 420),
-            div(class="small-note", "Tip: Choose two variables to compare and see their ZIP-level correlation below.")
+            div(class="small-note", "Colors represent (i) ancestry or subcommunity proportion at the zip-code level, (ii) PM2.5 percentile, and (iii) prevalence or proportion of other environmental variables.")
         ),
         box(width = 6, title = "Map B", status = "primary", solidHeader = TRUE,
             selectInput("mapB_var", "Variable",
@@ -187,7 +187,7 @@ body <- dashboardBody(
         box(width = 12, title = "ZIP-level correlation", status = "info",
             solidHeader = TRUE,
             plotOutput("map_scatter", height = 350),
-            div(class="small-note", "Correlation is Spearman’s ρ with linear trend for orientation.")
+            div(class="small-note", "Each dot correspond to a Zip-code. Zip-code correlation is Spearman’s ρ with linear trend for orientation.")
         )
       )
     ),
