@@ -175,7 +175,7 @@ body <- dashboardBody(
                         choices  = c("– select variable –" = "", setNames(vars_zip, pretty_v(vars_zip))), selected = ""),
             sliderInput("mapA_op", "Opacity", .2, 1, .7, .05),
             leafletOutput("mapA", height = 420),
-            div(class="small-note", "Colors represent (i) ancestry or subcommunity proportion at the zip-code level, (ii) PM2.5 percentile, and (iii) prevalence or proportion of other environmental variables.")
+            div(class="small-note", "Colors represent (i) ancestry or subcommunity proportion at the Zip code level, (ii) PM2.5 percentile, and (iii) prevalence or proportion of other environmental variables. Only Zip codes with more than 100 individuals are shown.")
         ),
         box(width = 6, title = "Map B", status = "primary", solidHeader = TRUE,
             selectInput("mapB_var", "Variable",

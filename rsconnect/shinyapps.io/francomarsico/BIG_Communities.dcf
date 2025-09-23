@@ -5,7 +5,7 @@ account: francomarsico
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 15178709
-bundleId: 10746382
+bundleId: 10941749
 url: https://francomarsico.shinyapps.io/BIG_Communities/
 version: 1
 asMultiple: FALSE
