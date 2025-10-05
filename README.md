@@ -3,42 +3,63 @@
 Data and code for the manuscript **“Identity‑by‑descent captures shared environmental factors at biobank scale.”**  
 Pre‑print: <https://doi.org/10.1101/2025.05.03.652048>
 
-This project is part of the **Biorepository, Informatics & Genomics (BIG) initiative at the University of Tennessee Health Science Center**.  
+This repository is part of the **Biorepository, Informatics & Genomics (BIG) initiative at the University of Tennessee Health Science Center**.  
 Project home: <https://uthsc.edu/cbmi/big/>
 
-## What’s in this repository?
-- **aggregated data & scripts** to reproduce the analysis at biobank scale. Identity‑by‑descent (IBD) clustering.  
-  - four continent‑scale genetic communities, and  
-  - seventeen sub‑communities that share both genetic architecture and distinct environmental exposures.  
-  - A **shiny dashboard** (`app.r`) to interactively explore genetic, environmental and health patterns at sub‑community resolution.
+**Live dashboard:** <https://francomarsico.shinyapps.io/BIG_Communities/>
 
+## Highlights
+- Identity‑by‑descent (IBD) clustering at biobank scale, summarising four continent‑level communities and seventeen sub‑communities.
+- Aggregated environmental indicators (for example PM2.5) aligned to the same ZIP code geography used for the communities.
+- Interactive Shiny application to compare communities, exposures, and health outcomes side by side.
 
-To access the R shiny app visit the following link: <https://francomarsico.shinyapps.io/BIG_Communities/>
+## Repository contents
+- `app.r` – Shiny dashboard that ties together the data layers and visualisations.
+- `data/` – Aggregated data products used by the dashboard (no individual‑level records).
+- `rsconnect/` – Deployment metadata for shinyapps.io.
 
-<img width="1909" height="957" alt="fig1" src="https://github.com/user-attachments/assets/315b5737-8dfd-40a8-a591-d10583791a2e" />
+## Getting started locally
+1. Install R (≥ 4.3) and RStudio or your preferred IDE.
+2. Install the required packages:
 
+```r
+install.packages(c(
+  "shiny", "shinyWidgets", "shinydashboard", "shinydashboardPlus",
+  "leaflet", "leaflet.extras", "sf", "geojsonio", "dplyr", "tidyr",
+  "readr", "DT", "ggplot2", "viridisLite", "plotly", "tibble",
+  "forcats", "stringr", "RColorBrewer"
+))
+```
 
+3. Launch the dashboard from the repository root:
 
+```r
+shiny::runApp(".")
+```
 
+The app reads the pre‑computed objects in `data/` by default. No credentials are required.
 
+## Data notes
+- All data are aggregated to protect participant privacy; counts are filtered so that ZIP codes with fewer than 100 individuals are removed from the map.
+- Environmental layers (for example PM2.5) come from public sources referenced in the manuscript; see the pre‑print for complete methodology.
+- If you need to regenerate any tables, follow the scripts bundled in `data/` or reach out via the contact below.
 
-## Mapping BIG
-Here we can explore the spatial correlation between the relatedness based communities (can be interpreted as big families composed by distant relatives). In the example we see pollution (PM 2.5) and a specific community C2 (mostly African ancestry). 
-<img width="1909" height="957" alt="fig2" src="https://github.com/user-attachments/assets/65221633-06b4-4abf-8fc5-b6222b07db6d" />
+## Screenshots
 
+### Community overview
+<img width="1909" height="957" alt="Community overview" src="https://github.com/user-attachments/assets/315b5737-8dfd-40a8-a591-d10583791a2e" />
 
-## Exploring health conditions across communities
-Here we can see the health conditions and the prevalence within different communities in order to compare them.
-<img width="1909" height="957" alt="fig3" src="https://github.com/user-attachments/assets/6642f5c3-aadd-4cf4-a535-0f6c235f1cf5" />
+### Mapping BIG
+<img width="1909" height="957" alt="Geospatial comparison" src="https://github.com/user-attachments/assets/65221633-06b4-4abf-8fc5-b6222b07db6d" />
 
+### Health conditions across communities
+<img width="1909" height="957" alt="Health comparison" src="https://github.com/user-attachments/assets/6642f5c3-aadd-4cf4-a535-0f6c235f1cf5" />
 
-## Communities, environment and health conditions
+### Communities, environment, and health
+<img width="1909" height="957" alt="Communities, environment, and health" src="https://github.com/user-attachments/assets/7a1109d6-5383-4d60-8497-a7af2b1e7ac2" />
 
-Here we can explore genetically related individuals (communities) with shared enviromental and health conditions, aiming to inform decision making in public health.
+## Citation
+If you use this code or dashboard, please cite the pre‑print above and acknowledge the BIG Initiative.
 
-<img width="1909" height="957" alt="fig4" src="https://github.com/user-attachments/assets/7a1109d6-5383-4d60-8497-a7af2b1e7ac2" />
-
-
-Note: The final dashboard will be deployed in a web, at this stage the data are for illustrative purposes
-
-fmarsico@uthsc.edu
+## Contact
+Questions or feedback: fmarsico@uthsc.edu
