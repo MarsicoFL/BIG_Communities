@@ -97,7 +97,7 @@ body <- dashboardBody(
           title   = tagList(icon("book-open"), "BIG in context"),
           status  = "info", solidHeader = TRUE, width = 12, class = "about-card",
           HTML(
-            "<h4>What is BIG? 🔬</h4>
+            "<h4>What is BIG? </h4>
              <p>The <strong>Biorepository &amp; Integrative Genomics (BIG) Initiative</strong>
                 links <b>&gt;42,000</b> participants to longitudinal EHRs, genome data, environmental measures by ZIP-code,
                 , creating one of the largest pediatric genomic resources.</p>
@@ -107,7 +107,7 @@ body <- dashboardBody(
                 and close relatives.</p>
              <ul>
                <li>4 macro-communities <code>C1–C4</code>.</li>
-               <li>17 sub-communities (<code>C1_1…C4_4</code>) capturing 99.7% of sequences.</li>
+               <li>17 sub-communities (<code>C1a…C4b</code>).</li>
                <li>Integration of ancestry <em>and</em> neighborhood context.</li>
              </ul>
              <h4>Why does it matter? </h4>
