@@ -13,7 +13,7 @@ Project home: <https://uthsc.edu/cbmi/big/>
 - Aggregated environmental indicators (for example PM2.5) aligned to the same ZIP code geography used for the communities.
 - Interactive Shiny application to compare communities, exposures, and health outcomes side by side.
 
-## Repository contents
+## Contents
 - `app.r` – Shiny dashboard that ties together the data layers and visualisations.
 - `data/` – Aggregated data products used by the dashboard (no individual‑level records).
 - `rsconnect/` – Deployment metadata for shinyapps.io.
