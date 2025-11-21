@@ -1,4 +1,4 @@
-# BIG_Communities
+# BIG Communities
 
 Data and code for the manuscript **“Identity‑by‑descent captures shared environmental factors at biobank scale.”**  
 Pre‑print: <https://doi.org/10.1101/2025.05.03.652048>
